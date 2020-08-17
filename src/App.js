@@ -4,6 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
+import Chat from './components/Chat/Chat';
 
 function App() {
   return (
@@ -14,11 +15,9 @@ function App() {
           <Sidebar />
           <Switch>
             <Route path="/room/:roomId">
-              {/* <Chat/> */}
-              <h2>Chat Screen</h2>
+              <Chat/>
             </Route>
             <Route path="/">
-              <h1>Welcome screen</h1>
             </Route>
           </Switch>
           {/* setting up router */}
