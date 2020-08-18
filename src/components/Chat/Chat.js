@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 
 import './Chat.css';
-
+import Message from './Message/Message';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from '../../firebase';
@@ -11,7 +11,7 @@ const Chat = () => {
     const {roomId} = useParams();
 
     const [roomDetails, setRoomDetails] = useState(null);
-    const [roomMessages, setRoomMessages] = useState(null)
+    const [roomMessages, setRoomMessages] = useState([])
 
     useEffect(() => {
         if(roomId){
@@ -53,6 +53,14 @@ const Chat = () => {
 
             <div className="chat__messages">
                 {/* message component and take props  */}
+                {roomMessages.map(message => (
+                    <Message 
+                    userImage={message.userImage}
+                    timestamp={message.timestamp}
+                    user={message.user}
+                    message={message.message}
+                    />
+                ))}
             </div>
         </div>
     );

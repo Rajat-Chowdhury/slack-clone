@@ -51,6 +51,8 @@ const Sidebar = ( ) => {
                 </div>
                 <CreateIcon />
             </div>
+        
+
             <SidebarOption Icon={InsertCommentIcon} title="Threads" />
             <SidebarOption 
             title="Youtube"/>
@@ -82,12 +84,14 @@ const Sidebar = ( ) => {
             Icon={AddIcon}
             addChannelOption
             title="Add Channel"/>
-
+    
             {/* connect to db and list all the channels
             and using sidebarOption component to display them */}
             {channels.map(channel => (
             <SidebarOption title={channel.name} id={channel.id}/>
             ))}                
+
+
 
         </div>
     )
