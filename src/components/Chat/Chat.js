@@ -6,6 +6,7 @@ import Message from './Message/Message';
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import db from '../../firebase';
+import Input from './Input/Input';
 
 const Chat = () => {
     const {roomId} = useParams();
@@ -53,15 +54,20 @@ const Chat = () => {
 
             <div className="chat__messages">
                 {/* message component and take props  */}
-                {roomMessages.map(message => (
+                {roomMessages.map(({userImage, timestamp,user,message}) => (
                     <Message 
-                    userImage={message.userImage}
-                    timestamp={message.timestamp}
-                    user={message.user}
-                    message={message.message}
+                    userImage={userImage}
+                    timestamp={timestamp}
+                    user={user}
+                    message={message}
                     />
                 ))}
             </div>
+            <Input channelName={roomDetails?.name} channelId={roomDetails?.id} />
+            <h1>{roomId}</h1>    
+            <h1>{roomDetails?.id}</h1>    
+            <h1>{roomDetails?.name}</h1>    
+            {console.log("chat component" , roomDetails)}
         </div>
     );
 }

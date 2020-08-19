@@ -1,0 +1,22 @@
+.input{
+    border-radius: 20px;
+    
+}
+
+.input > form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.input >form> input {
+    position: fixed;
+    bottom: 30px;
+    width: 60%;
+    border: 1px solid grey;
+    padding: 20px;
+}
+
+.input>form>button{
+    display: none !important;
+}

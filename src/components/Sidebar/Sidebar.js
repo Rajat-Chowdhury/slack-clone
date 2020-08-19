@@ -16,9 +16,11 @@ import FileCopyIcon from '@material-ui/icons/FileCopy';
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
+import {useStateValue} from '../../hoc/StateProvider';
 
 const Sidebar = ( ) => {
 
+    const [{user}] = useStateValue();
     const [channels,setChannels] = useState([]);
 
     useEffect(() => {
@@ -46,7 +48,7 @@ const Sidebar = ( ) => {
                     <h2> FC Barcelona </h2>
                     <h3>
                         <FiberManualRecordIcon/>
-                        Lionel Messi
+                        {user?.displayName}
                     </h3>
                 </div>
                 <CreateIcon />

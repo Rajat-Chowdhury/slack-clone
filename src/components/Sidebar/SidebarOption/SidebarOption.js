@@ -14,7 +14,7 @@ const SidebarOption = (props) => {
         }
         else{
             history.push(props.title);
-        }
+        } 
     };
 
     const addChannel = () => {
