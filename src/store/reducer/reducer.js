@@ -1,7 +1,7 @@
 import actionTypes from '../actionTypes/actionTypes';
 
 export const initialState = {
-    user:'rajat'
+    user: null
 };
 
 const reducer = (state= initialState, action) => {
