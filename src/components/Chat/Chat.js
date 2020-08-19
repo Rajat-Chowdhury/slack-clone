@@ -64,10 +64,7 @@ const Chat = () => {
                 ))}
             </div>
             <Input channelName={roomDetails?.name} channelId={roomDetails?.id} />
-            <h1>{roomId}</h1>    
-            <h1>{roomDetails?.id}</h1>    
-            <h1>{roomDetails?.name}</h1>    
-            {console.log("chat component" , roomDetails)}
+
         </div>
     );
 }
